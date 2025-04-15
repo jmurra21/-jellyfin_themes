@@ -2,19 +2,12 @@
 :root {
     --primary-background-color: #101010; /* Dark background */
     --secondary-background-color: #181818; /* Slightly lighter background */
-    --primary-accent-color: #C6A519; /* Gold accent */
-    --secondary-accent-color: rgba(198, 165, 25, 0.2); /* Lightened gold for buttons */
+    --primary-accent-color: #F8981E; /* Vibrant orange accent */
+    --secondary-accent-color: rgba(248, 152, 30, 0.2); /* Lightened orange for buttons */
     --primary-background-transparent: rgba(35, 35, 35, 0.5);
     --secondary-background-transparent: rgba(0, 0, 0, 0.6);
     --rounded-cards: 10px; /* Adjust rounded corners */
     --blur: 10px; /* Blur for background effects */
-
-    /* Alternate accents */
-    --primary-alt1: rgba(198, 165, 25, 0.8);
-    --primary-alt2: rgba(198, 165, 25, 0.6);
-    --primary-alt3: rgba(198, 165, 25, 0.5);
-    --primary-alt4: rgba(198, 165, 25, 0.4);
-    --primary-alt5: rgba(198, 165, 25, 0.3);
 }
 
 /* Adjust button styles to reflect Pornhub aesthetic */
@@ -26,7 +19,7 @@
 }
 
 .emby-button:hover, .navMenuOption:hover {
-    background: rgba(198, 165, 25, 0.7) !important; /* Lighter on hover */
+    background: rgba(248, 152, 30, 0.7) !important; /* Lighter on hover */
 }
 
 /* Allow for double size for icons */
@@ -54,6 +47,7 @@ progress::-webkit-progress-value {
     background: var(--secondary-accent-color) !important;
 }
 
+/* Adjust existing elements to use primary accent color */
 .emby-checkbox:checked + span + .checkboxOutline,
 .emby-checkbox:focus:not(:checked) + span + .checkboxOutline,
 .emby-input:focus,
@@ -1158,7 +1152,7 @@ html,
     right: 110px !important;
     background: var(--primary-accent-color) !important;
     border-radius: 100px !important;
-    color: var(--secondary-background-color) !important;
+    color: #101010 !important; /* Text color to dark background to match */
 }
 
 .layout-desktop .mainDetailButtons .detailButton {
