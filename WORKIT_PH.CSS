@@ -1,0 +1,151 @@
+/* Font Integration */
+@font-face {
+    font-family: 'Roboto';
+    src: url('file:///G:/TIMPFDNO/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('file:///G:/TIMPFDNO/fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+}
+
+/* Color Palette */
+:root {
+    --primary-orange: #FF6A00; /* Main Orange */
+    --secondary-orange: #FF7A30; /* Hover Color */
+    --black: #000000; /* Black Background */
+    --dark-gray: #101010; /* Dark Gray for contrast */
+    --white: #FFFFFF; /* White text */
+    --light-gray: #F0F0F0; /* Light background elements */
+    --gray-text: #666666; /* Text Color */
+}
+
+/* Global Reset */
+body, h1, h2, h3, p, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px; 
+    color: var(--gray-text);
+    background-color: var(--black); /* Set black background */
+}
+
+/* Header and Navigation */
+header {
+    background-color: var(--black); /* Header background */
+    color: var(--white);
+    padding: 20px 10%; /* Space from the edges */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    color: var(--primary-orange);
+}
+
+nav {
+    display: flex;
+    gap: 10px; /* Space between navigation items */
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--white);
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: var(--primary-orange);
+}
+
+/* Library Banner */
+.library-banner {
+    background: var(--dark-gray);
+    text-align: center;
+    padding: 50px 10%;
+    color: var(--white);
+}
+
+/* Library Section */
+.library-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Spacing between libraries */
+}
+
+.library {
+    background-color: var(--light-gray);
+    color: var(--black);
+    border-radius: 10px;
+    padding: 20px;
+    flex: 1 1 300px; /* Responsive columns */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: transform 0.3s;
+}
+
+.library:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+/* Button Styles */
+.button {
+    background-color: var(--primary-orange);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: var(--secondary-orange);
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+    .library {
+        flex: 1 1 45%; /* Two columns on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Smaller font size for tablets */
+    }
+    
+    .library {
+        flex: 1 1 100%; /* Single column on smaller devices */
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-logo {
+        font-size: 24px; /* Smaller logo for mobile */
+    }
+    
+    .button {
+        font-size: 12px; /* Smaller button on mobile */
+        padding: 8px 16px; /* Adjust padding */
+    }
+}
