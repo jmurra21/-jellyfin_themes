@@ -1,18 +1,18 @@
 /* Importing external CSS for Jellyfin */
 @import url('https://raw.githubusercontent.com/jmurra21/-jellyfin_themes/refs/heads/main/HOLLYHUB.CSS');
 
-/* Importing Fonts */
+/* Importing Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap');
 
 /* Color Palette */
 :root {
     --primary-orange: #FF6A00; /* Main Orange */
     --secondary-orange: #FF7A30; /* Hover Color */
-    --black: #000000; /* Black Background */
-    --dark-gray: #101010; /* Dark Gray for contrast */
+    --black: #1A1A1A; /* Dark background for overall theme */
+    --dark-gray: #101010; /* Dark Gray for UI contrast */
     --white: #FFFFFF; /* White text */
     --light-gray: #F0F0F0; /* Light background elements */
-    --gray-text: #666666; /* Text Color */
+    --gray-text: #999999; /* General text color */
 }
 
 /* Global Reset */
@@ -22,33 +22,37 @@ body, h1, h2, h3, p, button {
     box-sizing: border-box;
 }
 
-/* Base Styles */
+/* Main Body Styles */
 body {
     font-family: 'Roboto', sans-serif;
-    font-size: 16px; 
+    font-size: 16px;
     color: var(--gray-text);
-    background-color: var(--black); /* Set black background */
+    background-color: var(--black); /* Set dark background */
 }
 
-/* Header and Navigation */
+/* Header Styles */
 header {
-    background-color: var(--black); /* Header background */
+    background-color: var(--dark-gray); /* Header background */
     color: var(--white);
-    padding: 20px 10%; /* Space from the edges */
+    padding: 20px 10%; /* Padding around the header */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky; /* Keeps the header at the top on scroll */
+    top: 0;
+    z-index: 1000;
 }
 
 .brand-logo {
     font-family: 'Montserrat', sans-serif;
-    font-size: 28px;
+    font-size: 32px;
     color: var(--primary-orange);
 }
 
+/* Navigation Styles */
 nav {
     display: flex;
-    gap: 10px; /* Space between navigation items */
+    gap: 15px; /* Space between nav items */
 }
 
 nav a {
@@ -56,16 +60,17 @@ nav a {
     color: var(--white);
     padding: 10px 15px;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 nav a:hover {
     background-color: var(--primary-orange);
+    color: var(--black); /* Adjust text color on hover */
 }
 
 /* Library Banner */
 .library-banner {
-    background: var(--dark-gray);
+    background-color: var(--dark-gray);
     text-align: center;
     padding: 50px 10%;
     color: var(--white);
@@ -86,11 +91,12 @@ nav a:hover {
     padding: 20px;
     flex: 1 1 300px; /* Responsive columns */
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    transition: transform 0.3s;
+    transition: transform 0.3s, background-color 0.3s;
 }
 
 .library:hover {
     transform: translateY(-5px); /* Lift effect on hover */
+    background-color: var(--primary-orange); /* Change background on hover */
 }
 
 /* Button Styles */
@@ -102,11 +108,12 @@ nav a:hover {
     padding: 10px 20px;
     font-size: 14px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .button:hover {
     background-color: var(--secondary-orange);
+    transform: scale(1.05); /* Scale up button on hover */
 }
 
 /* Footer Styles */
@@ -117,7 +124,7 @@ footer {
     padding: 20px 0;
 }
 
-/* Media Queries for Responsive Design */
+/* Media Queries for Responsiveness */
 @media (max-width: 1200px) {
     .library {
         flex: 1 1 45%; /* Two columns on medium screens */
@@ -136,7 +143,7 @@ footer {
 
 @media (max-width: 480px) {
     .brand-logo {
-        font-size: 24px; /* Smaller logo for mobile */
+        font-size: 24px; /* Adjust logo size for mobile */
     }
     
     .button {
